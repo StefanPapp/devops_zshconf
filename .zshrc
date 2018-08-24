@@ -8,7 +8,7 @@ plugins=(git osx z vagrant docker sudo vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source .localsettings
 #source etc/git-extra-completion.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
