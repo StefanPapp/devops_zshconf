@@ -16,7 +16,6 @@ DISABLE_AUTO_TITLE="true"
 
 # Spark
 export PATH=/workspace/bin/apache/spark/current/bin:$PATH
-export SPARK_HOME="/workspace/bin/apache/spark/current"
 export PYSPARK_PYTHON=python3
 
 # Java
@@ -32,8 +31,6 @@ export PATH=$PATH:/Users/stefanpapp/.local/share/certificates
 
 [ -s "/Users/stefanpapp/.scm_breeze/scm_breeze.sh" ] && source "/Users/stefanpapp/.scm_breeze/scm_breeze.sh"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-
-export KAFKA_HOME="/workspace/bin/apache/kafka/current"
 
 #alias
 alias ls='ls -alihF'
