@@ -1,0 +1,19 @@
+# todo get all aliases here
+# vms
+alias asgard='ssh sp@asgard'
+alias helheim='ssh stefan@helheim'
+
+alias sparoo='cd $SPARK_HOME'
+alias kafroo='cd $KAFKA_HOME'
+alias sdu='sudo du --max-depth=3 -hx '
+
+alias ls='ls -alihF'
+alias zshconfig="vim ~/.zshrc"
+alias qn="geeknote create --title 'quick entry' --content $1"
+
+# maconly
+alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
+
+# linux distro only
+alias sapt='sudo apt'
+alias syum='sudo yum'

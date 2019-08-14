@@ -1,0 +1,8 @@
+# developer stuff
+
+# Spark/kafka
+export PYTHON_BIN=python3
+export PYSPARK_PYTHON=python3
+
+export PATH=$SPARK_HOME/bin:$PATH
+export PATH=$KAFKA_HOME/bin:$PATH
