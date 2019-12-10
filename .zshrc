@@ -24,9 +24,9 @@ source "${HOME}/antigen.zsh"
 autoload -U compinit && compinit
 antigen bundle s7anley/zsh-geeknote
 
-source "${HOME}/.aliases"
-source "${HOME}/.development"
-source "${HOME}/.macos" # special environment
+source "${HOME}/zshconf/.aliases"
+source "${HOME}/zshconf/.development"
+source "${HOME}/zshconf/.macos" # special environment
 
 [ -s "${HOME}/.scm_breeze/scm_breeze.sh" ] && source "${HOME}/.scm_breeze/scm_breeze.sh"
 eval $(thefuck --alias)
