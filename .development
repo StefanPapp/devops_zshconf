@@ -25,5 +25,5 @@ export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
 
 # Scala
-eval "$(scalaenv init -)"
 export PATH="${HOME}/.scalaenv/bin:${PATH}"
+eval "$(scalaenv init -)"
