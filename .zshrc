@@ -30,7 +30,9 @@ setopt share_history # share history between different instances of the shell
 # plugins 
 plugins=(per-directory-history git osx z vagrant docker sudo vi-mode fast-syntax-highlighting geeknote zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
-export ZPLUG_HOME=/usr/local/opt/zplug
+
+[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zlug
+[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug s7anley/zsh-geeknote
 zplug "b4b4r07/enhancd", use:init.sh
@@ -58,3 +60,5 @@ setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
 source $ZSH/oh-my-zsh.sh
+
+[ -s "/home/sp/.scm_breeze/scm_breeze.sh" ] && source "/home/sp/.scm_breeze/scm_breeze.sh"
