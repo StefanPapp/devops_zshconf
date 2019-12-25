@@ -1,12 +1,16 @@
 # core zsh
 export ZSH=~/.oh-my-zsh
-ZSH_THEME="sobole"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
 #DISABLE_AUTO_TITLE="true"
 ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
 export EDITOR='vim'
+
+# theme
+ZSH_THEME="sobole"  # more decent
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+# POWERLEVEL9K_MODE="awesome-patched"
 
 # history
 export HISTFILE=~/.zsh_history  # ensure history file visibility
@@ -15,10 +19,13 @@ export HISTCONTROL=erasedups  # Ignore duplicate entries in history
 export HISTSIZE=10000         # Increases size of history
 export SAVEHIST=10000
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
-source "${HOME}/.oh-my-zsh/lib/history.zsh"
-setopt inc_append_history
-setopt share_history
+# source "${HOME}/.oh-my-zsh/lib/history.zsh"
 setopt histappend        # Append history instead of overwriting
+setopt hist_ignore_all_dups # remove older duplicate entries from history
+setopt hist_reduce_blanks # remove superfluous blanks from history items
+setopt inc_append_history # save history entries as soon as they are entered
+setopt share_history # share history between different instances of the shell
+
 
 # plugins 
 plugins=(per-directory-history git osx z vagrant docker sudo vi-mode fast-syntax-highlighting geeknote zsh-completions)
@@ -27,6 +34,7 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug s7anley/zsh-geeknote
 zplug "b4b4r07/enhancd", use:init.sh
+zplug zsh-users/zsh-history-substring-search
 zplug load
 
 source $ZSH/oh-my-zsh.sh
@@ -45,4 +53,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 setopt dotglob           # includes dotfiles in pathname expansion
-
+setopt auto_cd # cd by typing directory name if it's not a command
+setopt correct_all # autocorrect commands
+setopt auto_list # automatically list choices on ambiguous completion
+setopt auto_menu # automatically use menu completion
+setopt always_to_end # move cursor to end if word had one match
