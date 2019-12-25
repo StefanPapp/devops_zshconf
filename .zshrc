@@ -1,60 +1,48 @@
 # core zsh
+export ZSH=~/.oh-my-zsh
 ZSH_THEME="sobole"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
-DISABLE_AUTO_TITLE="true"
+#DISABLE_AUTO_TITLE="true"
+ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
+export EDITOR='vim'
 
+# history
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 export HISTCONTROL=erasedups  # Ignore duplicate entries in history
 export HISTSIZE=10000         # Increases size of history
 export SAVEHIST=10000
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
-source /Users/stefanpapp/.oh-my-zsh/lib/history.zsh
+source "${HOME}/.oh-my-zsh/lib/history.zsh"
+setopt inc_append_history
+setopt share_history
+setopt histappend        # Append history instead of overwriting
 
-export ZSH=~/.oh-my-zsh
+# plugins 
+plugins=(per-directory-history git osx z vagrant docker sudo vi-mode fast-syntax-highlighting geeknote zsh-completions)
+autoload -U compinit && compinit # init zsh-completion
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
+zplug s7anley/zsh-geeknote
+zplug "b4b4r07/enhancd", use:init.sh
+zplug load
 
-plugins=(per-directory-history git osx z vagrant docker sudo vi-mode fast-syntax-highlighting geeknote zsh-completions)
 source $ZSH/oh-my-zsh.sh
 
-source "${HOME}/antigen.zsh"
-autoload -U compinit && compinit
-antigen bundle s7anley/zsh-geeknote
+# specific configuration
+source "${HOME}/zshconf/init_aliases.sh" # aliases
+source "${HOME}/zshconf/init_devenv.sh" # dev env such as java and scala
+source "${HOME}/zshconf/init_macosenv.sh" # mac os specific
+source "${HOME}/zshconf/init_cloudenv.sh" # cloud environment
+source "${HOME}/.scm_breeze/scm_breeze.sh"
 
-source "${HOME}/zshconf/.aliases"
-source "${HOME}/zshconf/.development"
-source "${HOME}/zshconf/.macos" # special environment
-
-[ -s "${HOME}/.scm_breeze/scm_breeze.sh" ] && source "${HOME}/.scm_breeze/scm_breeze.sh"
 eval $(thefuck --alias)
-export EDITOR='vim'
-
-
 
 bindkey -s "\C-h" "\eqhh"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/stefanpapp/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/stefanpapp/google-cloud-sdk/path.zsh.inc'; fi
+setopt dotglob           # includes dotfiles in pathname expansion
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/stefanpapp/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/stefanpapp/google-cloud-sdk/completion.zsh.inc'; fi
-
-setopt inc_append_history
-setopt share_history
-# screen -R -D
-# source ~/enhancd/init.sh
-
-  SHOPT=`which shopt`
-  if [ -z SHOPT ]; then
-      shopt -s histappend        # Append history instead of overwriting
-      shopt -s cdspell           # Correct minor spelling errors in cd command
-      shopt -s dotglob           # includes dotfiles in pathname expansion
-      shopt -s checkwinsize      # If window size changes, redraw contents
-      shopt -s cmdhist           # Multiline commands are a single command in history.
-      shopt -s extglob           # Allows basic regexps in bash.
-  fi
