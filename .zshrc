@@ -8,9 +8,10 @@ ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
 export EDITOR='vim'
 
 # theme
-ZSH_THEME="sobole"  # more decent
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# POWERLEVEL9K_MODE="awesome-patched"
+# ZSH_THEME="sobole"  # more decent
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_MODE="awesome-patched"
+
 
 # history
 export HISTFILE=~/.zsh_history  # ensure history file visibility
@@ -19,7 +20,6 @@ export HISTCONTROL=erasedups  # Ignore duplicate entries in history
 export HISTSIZE=10000         # Increases size of history
 export SAVEHIST=10000
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
-# source "${HOME}/.oh-my-zsh/lib/history.zsh"
 setopt histappend        # Append history instead of overwriting
 setopt hist_ignore_all_dups # remove older duplicate entries from history
 setopt hist_reduce_blanks # remove superfluous blanks from history items
@@ -36,8 +36,6 @@ zplug s7anley/zsh-geeknote
 zplug "b4b4r07/enhancd", use:init.sh
 zplug zsh-users/zsh-history-substring-search
 zplug load
-
-source $ZSH/oh-my-zsh.sh
 
 # specific configuration
 source "${HOME}/zshconf/init_aliases.sh" # aliases
@@ -58,3 +56,5 @@ setopt correct_all # autocorrect commands
 setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
+
+source $ZSH/oh-my-zsh.sh

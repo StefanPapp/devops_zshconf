@@ -16,7 +16,7 @@ eval "$(scalaenv init -)"
 
 # local zookeeper
 export ZOOKEEPER_HOME="/opt/zookeeper/current"
-export PATH=$ZOOKEEPER_HOME/bin:$PAT
+export PATH=$ZOOKEEPER_HOME/bin:$PATH
 
 #local spark
 export SPARK_HOME="/opt/spark/current"
