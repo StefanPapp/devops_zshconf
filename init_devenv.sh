@@ -12,7 +12,6 @@ export PATH=$SPARK_HOME/bin:$PATH
 export PATH=$KAFKA_HOME/bin:$PATH
 export PATH=$ZOOKEEPER_HOME/bin:$PATH
 
-eval "$(jenv init -)"
 
 # Python
 export PATH=/usr/local/bin:$PATH
@@ -21,7 +20,10 @@ export PATH=/Users/stefanpapp/anaconda3/bin:$PATH
 
 alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
 
+# Java
+export PATH="${HOME}/.jenv/bin:${PATH}"
+eval "$(jenv init -)"
 
 # Scala
-eval "$(scalaenv init -)"
 export PATH="${HOME}/.scalaenv/bin:${PATH}"
+eval "$(scalaenv init -)"
