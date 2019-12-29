@@ -29,3 +29,7 @@ export KAFKA_HOME="/opt/kafka/current"
 alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
 
 export PATH=/opt/puppetlabs/bin:$PATH
+
+
+alias sparoo='cd $SPARK_HOME'
+alias kafroo='cd $KAFKA_HOME'

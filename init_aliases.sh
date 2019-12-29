@@ -4,8 +4,6 @@ alias ft='grep -rnw . -e'
 alias asgard='ssh sp@asgard'
 alias helheim='ssh stefan@helheim'
 
-alias sparoo='cd $SPARK_HOME'
-alias kafroo='cd $KAFKA_HOME'
 alias sdu='sudo du --max-depth=3 -hx '
 
 alias ls='ls -alihF'
@@ -16,9 +14,12 @@ alias qn="geeknote create --title 'quick entry' --content $1"
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
 # linux distro only
-alias sapt='sudo apt'
 alias syum='sudo yum'
 alias sctl='systemctl'
+alias au='sudo apt update'
+alias aug='sudo apt upgrade'
+alias ai='sudo apt install'
+
 
 alias -g G='| grep'
 alias abig='tmux attach -t big'
@@ -45,6 +46,7 @@ alias envnew='virtualenv env -p python3'
 alias envnew2='virtualenv env'
 alias envoff=deactivate
 alias envon='source env/bin/activate'
+alias fd='fdfind'
 alias fhere='nautilus . &> /dev/null &'
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias fullpath='ls -d -1 $PWD/*.*'
@@ -112,8 +114,6 @@ alias usb='sudo mount /dev/sdb1 /mnt/usb'
 alias usshfs='fusermount -u $1'
 alias vdestroy='vagrant destroy'
 alias vhalt='vagrant halt'
-# alias vim=nvim
-# alias vimrc='nvim ~/dotfiles/vimrc/vimrc'
 
 alias vprov='vagrant provision'
 alias vprune='vagrant global-status --prune'
