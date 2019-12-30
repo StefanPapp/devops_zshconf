@@ -23,7 +23,9 @@ export SPARK_HOME="/opt/spark/current"
 export PATH=$SPARK_HOME/bin:$PATH
 
 # local kafka
-export PATH=$KAFKA_HOME/bin:$PATH
-export PATH=$ZOOKEEPER_HOME/bin:$PATH
+export PATH=$KAFKA_HOME/binexport PATH=$ZOOKEEPER_HOME/bin:$PATH
 export KAFKA_HOME="/opt/kafka/current"
 alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
+
+# devops
+export PATH=/opt/puppetlabs//bin:$PATH

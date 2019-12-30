@@ -31,7 +31,7 @@ setopt share_history # share history between different instances of the shell
 plugins=(per-directory-history git osx z vagrant docker sudo vi-mode fast-syntax-highlighting geeknote zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
-[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zlug
+[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
 [ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug s7anley/zsh-geeknote
