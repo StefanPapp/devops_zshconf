@@ -4,8 +4,6 @@ alias ft='grep -rnw . -e'
 alias asgard='ssh sp@asgard'
 alias helheim='ssh stefan@helheim'
 
-alias sparoo='cd $SPARK_HOME'
-alias kafroo='cd $KAFKA_HOME'
 alias sdu='sudo du --max-depth=3 -hx '
 
 alias ls='ls -alihF'
@@ -16,7 +14,6 @@ alias qn="geeknote create --title 'quick entry' --content $1"
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
 # linux distro only
-alias sapt='sudo apt'
 alias syum='sudo yum'
 alias sctl='systemctl'
 alias au='sudo apt update'
@@ -94,7 +91,7 @@ alias less='less -M'
 alias litpush='Pweave -f pandoc *.mdw && git commit -a -S && git push origin master'
 alias lpcpush='git push lpc LPC_edits:master'
 # alias ls='ls --color=auto'
-#alias mc='make clean'
+# alias mc='make clean'
 alias mkdir='mkdir -p -v'
 alias mv='mv -iv'
 alias nodpms='xset dpms 0 0 0'
@@ -117,8 +114,6 @@ alias usb='sudo mount /dev/sdb1 /mnt/usb'
 alias usshfs='fusermount -u $1'
 alias vdestroy='vagrant destroy'
 alias vhalt='vagrant halt'
-# alias vim=nvim
-# alias vimrc='nvim ~/dotfiles/vimrc/vimrc'
 
 alias vprov='vagrant provision'
 alias vprune='vagrant global-status --prune'

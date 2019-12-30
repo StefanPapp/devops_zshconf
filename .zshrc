@@ -40,10 +40,10 @@ zplug zsh-users/zsh-history-substring-search
 zplug load
 
 # specific configuration
-source "${HOME}/zshconf/init_aliases.sh" # aliases
-source "${HOME}/zshconf/init_devenv.sh" # dev env such as java and scala
-source "${HOME}/zshconf/init_macosenv.sh" # mac os specific
-source "${HOME}/zshconf/init_cloudenv.sh" # cloud environment
+source "${HOME}/devops_zshconf/init_aliases.sh" # aliases
+source "${HOME}/devops_zshconf/init_devenv.sh" # dev env such as java and scala
+source "${HOME}/devops_zshconf/init_macosenv.sh" # mac os specific
+source "${HOME}/devops_zshconf/init_cloudenv.sh" # cloud environment
 source "${HOME}/.scm_breeze/scm_breeze.sh"
 
 eval $(thefuck --alias)
