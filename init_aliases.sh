@@ -50,6 +50,13 @@ alias fd='fdfind'
 alias fhere='nautilus . &> /dev/null &'
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias fullpath='ls -d -1 $PWD/*.*'
+
+clone_from_github(){
+git clone http://github.com/StefanPapp/$1
+}
+
+
+alias gsp='clone_from_github'
 alias gad='git add'
 alias gamend='git commit -S --amend'
 alias gapush='git commit -S -a && git push origin master'
