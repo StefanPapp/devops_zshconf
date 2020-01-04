@@ -12,7 +12,6 @@ export EDITOR='vim'
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="awesome-patched"
 
-
 # history
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
