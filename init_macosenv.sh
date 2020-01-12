@@ -12,3 +12,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Mac Helpers
 alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
+
+alias alfheim='ssh sp@alfheim'
+alias vanaheim='ssh sp@vanaheim'
