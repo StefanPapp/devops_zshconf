@@ -19,3 +19,7 @@ git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 # try out
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
