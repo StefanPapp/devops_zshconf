@@ -1,6 +1,8 @@
 # todo get all aliases here
 # vms
 alias ft='grep -rnw . -e'
+
+# custom servers
 alias asgard='ssh sp@asgard'
 alias helheim='ssh stefan@helheim'
 
@@ -22,18 +24,21 @@ alias ai='sudo apt install'
 
 
 alias -g G='| grep'
+
+#tmux
 alias abig='tmux attach -t big'
-alias addall='git commit -a -S'
-alias agf='ag -g'
-alias asmall='tmux attach -t small'
 alias attach='tmux attach -t'
+alias asmall='tmux attach -t small'
+
+#git
+alias addall='git commit -a -S'
+
+
+# docker
 alias dbuild='docker-compose build'
 alias ddebug='docker-compose run --service-ports web'
-alias def=sdcv
 alias dhalt='docker-compose stop'
 alias dmanage='docker-compose run web python manage.py'
-alias dotfiles='cd ~/dotfiles/'
-alias dotsync='cd ~/dotfiles && git pull origin master && git commit -S -a && git push origin master'
 alias dps='docker-compose ps'
 alias dpshell='docker-compose run web ./manage.py shell -i bpython'
 alias drc='docker-compose run web rails c'
@@ -42,20 +47,22 @@ alias drun='docker-compose run web'
 alias drunw='docker-compose run watch'
 alias dshell='docker-compose run web bash'
 alias dup='docker-compose up'
+
+
 alias envnew='virtualenv env -p python3'
 alias envnew2='virtualenv env'
 alias envoff=deactivate
 alias envon='source env/bin/activate'
-alias fd='fdfind'
+# alias fd='fdfind'
 alias fhere='nautilus . &> /dev/null &'
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias fullpath='ls -d -1 $PWD/*.*'
 
+#git
+alias pushom='git push origin master'
 clone_from_github(){
 git clone http://github.com/StefanPapp/$1
 }
-
-
 alias gsp='clone_from_github'
 alias gad='git add'
 alias gamend='git commit -S --amend'
@@ -103,25 +110,26 @@ alias mkdir='mkdir -p -v'
 alias mv='mv -iv'
 alias nodpms='xset dpms 0 0 0'
 alias purewheel='sudo python setup.py bdist_wheel'
-alias pushom='git push origin master'
-alias qemuload=qemu-system-x86_64
-alias qtconsole='ipython qtconsole --pylab=inline'
-alias quemudefault='qemu-system-i386  -m 512 -net nic -net user,hostfwd=tcp:127.0.0.1:2222-:22 vm-cs155/vm-cs155.vmdk'
+
+
+# aws
 alias s3down='aws s3 sync'
-alias shellsync='cd ~/Code/shellscripts && git pull origin master && git commit -a -S && git push origin master'
+alias shellsync='cd ~/devops_zshconf && git pull origin master && git commit -a -S && git push origin master'
 alias shutdown='sudo shutdown -P now'
 alias so='unalias -m '\''*'\'' && source ~/.zshrc'
-alias tmptest='mkdir /tmp/test && cd /tmp/test'
+
+#tmux
 alias tms='tmux list-sessions'
 alias tmuxconfig='nvim ~/dotfiles/tmux/tmux.conf'
+
+
+#std linux
 alias top=htop
 alias untar='tar -xvf'
-alias update='sudo apt update && sudo apt dist-upgrade'
-alias usb='sudo mount /dev/sdb1 /mnt/usb'
-alias usshfs='fusermount -u $1'
+
+# vagrant
 alias vdestroy='vagrant destroy'
 alias vhalt='vagrant halt'
-
 alias vprov='vagrant provision'
 alias vprune='vagrant global-status --prune'
 alias vreboot='vagrant halt && vagrant up'
@@ -133,4 +141,10 @@ alias vssh='vagrant ssh'
 alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
+
+# other
 alias which-command=whence
+alias def=sdcv
+alias dotfiles='cd ~/dotfiles/'
+alias dotsync='cd ~/dotfiles && git pull origin master && git commit -S -a && git push origin master'
+alias agf='ag -g'

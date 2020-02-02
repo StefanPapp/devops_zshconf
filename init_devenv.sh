@@ -33,3 +33,6 @@ export PATH=/opt/puppetlabs/bin:$PATH
 
 alias sparoo='cd $SPARK_HOME'
 alias kafroo='cd $KAFKA_HOME'
+
+# dev
+alias pat='puppet agent -t --verbose'

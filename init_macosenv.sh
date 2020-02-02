@@ -14,6 +14,8 @@ alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && kill
 alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 alias alfheim='ssh sp@alfheim'
+alias asgard='ssh sp@asgard'
 alias vanaheim='ssh sp@vanaheim'
+alias niflheim='ssh sp@niflheim'
 alias svartalfheim='ssh sp@svartalfheim'
-alias sah='ssh stefanpapp@svartalfheim'
+alias sah='ssh sp@svartalfheim'

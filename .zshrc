@@ -61,6 +61,23 @@ setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
+# pet:
+function prev() {
+      PREV=$(fc -lrn | head -n 1)
+        sh -c "pet new `printf %q "$PREV"`"
+        
+}
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+    CURSOR=$#BUFFER
+      zle redisplay
+      
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select
+
+
 source $ZSH/oh-my-zsh.sh
 
 [ -s "/home/sp/.scm_breeze/scm_breeze.sh" ] && source "/home/sp/.scm_breeze/scm_breeze.sh"
