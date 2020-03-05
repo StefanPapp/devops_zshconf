@@ -6,12 +6,6 @@ alias ft='grep -rnw . -e'
 alias asgard='ssh sp@asgard'
 alias helheim='ssh stefan@helheim'
 
-alias sdu='sudo du --max-depth=3 -hx '
-
-alias ls='ls -alihF'
-alias zshconfig="vim ~/.zshrc"
-alias qn="geeknote create --title 'quick entry' --content $1"
-
 # maconly
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
@@ -22,32 +16,26 @@ alias au='sudo apt update'
 alias aug='sudo apt upgrade'
 alias ai='sudo apt install'
 
-
-alias -g G='| grep'
-
 #tmux
 alias abig='tmux attach -t big'
 alias attach='tmux attach -t'
 alias asmall='tmux attach -t small'
 
-#git
-alias addall='git commit -a -S'
-
-
 # docker
 alias dbuild='docker-compose build'
 alias ddebug='docker-compose run --service-ports web'
 alias dhalt='docker-compose stop'
-alias dmanage='docker-compose run web python manage.py'
 alias dps='docker-compose ps'
 alias dpshell='docker-compose run web ./manage.py shell -i bpython'
-alias drc='docker-compose run web rails c'
 alias drebuild='docker-compose build --no-cache'
 alias drun='docker-compose run web'
 alias drunw='docker-compose run watch'
 alias dshell='docker-compose run web bash'
 alias dup='docker-compose up'
 
+alias sdu='sudo du --max-depth=3 -hx '
+alias zshconfig="vim ~/.zshrc"
+alias qn="geeknote create --title 'quick entry' --content ("")"
 
 alias envnew='virtualenv env -p python3'
 alias envnew2='virtualenv env'
@@ -55,10 +43,11 @@ alias envoff=deactivate
 alias envon='source env/bin/activate'
 # alias fd='fdfind'
 alias fhere='nautilus . &> /dev/null &'
-alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias fullpath='ls -d -1 $PWD/*.*'
 
 #git
+alias format='git log --pretty=format:"%h - %an, %ar : %s"'
+alias addall='git commit -a -S'
 alias pushom='git push origin master'
 clone_from_github(){
 git clone http://github.com/StefanPapp/$1
@@ -83,7 +72,6 @@ alias gitb='git branch'
 alias gitc='git commit -S'
 alias gitd='git branch -D'
 alias gitgraph='git log --pretty=oneline --graph'
-alias gitignore='nvim ~/dotfiles/git/gitignore'
 alias gitl='git log -1 HEAD'
 alias gits='git status'
 alias gl='git log --pretty=format:"%h - %an - %ar - %s" -20'
@@ -97,20 +85,6 @@ alias grebc='git rebase --continue'
 alias grebi='git rebase -i master'
 alias grepn='grep -n --color=auto'
 alias gsta='git stash apply'
-alias howbig='du -hc | tail -n 1'
-alias i3config='nvim ~/dotfiles/i3/i3config'
-alias keypush='keybase dir sign && git add SIGNED.md && git commit -S && git push origin master'
-alias la='ls -alhF'
-alias less='less -M'
-alias litpush='Pweave -f pandoc *.mdw && git commit -a -S && git push origin master'
-alias lpcpush='git push lpc LPC_edits:master'
-# alias ls='ls --color=auto'
-# alias mc='make clean'
-alias mkdir='mkdir -p -v'
-alias mv='mv -iv'
-alias nodpms='xset dpms 0 0 0'
-alias purewheel='sudo python setup.py bdist_wheel'
-
 
 # aws
 alias s3down='aws s3 sync'
@@ -118,12 +92,11 @@ alias shellsync='cd ~/devops_zshconf && git pull origin master && git commit -a 
 alias shutdown='sudo shutdown -P now'
 alias so='unalias -m '\''*'\'' && source ~/.zshrc'
 
-#tmux
+# tmux
 alias tms='tmux list-sessions'
 alias tmuxconfig='nvim ~/dotfiles/tmux/tmux.conf'
 
-
-#std linux
+# linux
 alias top=htop
 alias untar='tar -xvf'
 
@@ -143,8 +116,14 @@ alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
 
 # other
+alias howbig='du -hc | tail -n 1'
+alias ls='ls -alihF'
+alias la='ls -alhF'
+alias less='less -M'
+alias mkdir='mkdir -p -v'
+alias mv='mv -iv'
+alias purewheel='sudo python setup.py bdist_wheel'
+
 alias which-command=whence
 alias def=sdcv
-alias dotfiles='cd ~/dotfiles/'
-alias dotsync='cd ~/dotfiles && git pull origin master && git commit -S -a && git push origin master'
 alias agf='ag -g'
