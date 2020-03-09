@@ -1,4 +1,6 @@
 # todo get all aliases here
+alias ali='vim ~/devops_zshconf/init_aliases.sh'
+
 # vms
 alias ft='grep -rnw . -e'
 
@@ -37,18 +39,13 @@ alias sdu='sudo du --max-depth=3 -hx '
 alias zshconfig="vim ~/.zshrc"
 alias qn="geeknote create --title 'quick entry' --content ("")"
 
-alias envnew='virtualenv env -p python3'
-alias envnew2='virtualenv env'
-alias envoff=deactivate
-alias envon='source env/bin/activate'
 # alias fd='fdfind'
-alias fhere='nautilus . &> /dev/null &'
 alias fullpath='ls -d -1 $PWD/*.*'
 
 #git
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
-alias addall='git commit -a -S'
-alias pushom='git push origin master'
+alias gpom='git push origin master'
+
 clone_from_github(){
 git clone http://github.com/StefanPapp/$1
 }
