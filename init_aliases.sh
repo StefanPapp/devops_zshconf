@@ -1,9 +1,6 @@
 # todo get all aliases here
 alias ali='vim ~/devops_zshconf/init_aliases.sh'
 
-# vms
-alias ft='grep -rnw . -e'
-
 # custom servers
 alias asgard='ssh sp@asgard'
 alias helheim='ssh stefan@helheim'
@@ -19,20 +16,14 @@ alias aug='sudo apt upgrade'
 alias ai='sudo apt install'
 
 #tmux
-alias abig='tmux attach -t big'
 alias attach='tmux attach -t'
-alias asmall='tmux attach -t small'
+alias tms='tmux list-sessions'
+alias tmuxconfig='nvim ~/tmux.conf'
 
 # docker
 alias dbuild='docker-compose build'
-alias ddebug='docker-compose run --service-ports web'
 alias dhalt='docker-compose stop'
 alias dps='docker-compose ps'
-alias dpshell='docker-compose run web ./manage.py shell -i bpython'
-alias drebuild='docker-compose build --no-cache'
-alias drun='docker-compose run web'
-alias drunw='docker-compose run watch'
-alias dshell='docker-compose run web bash'
 alias dup='docker-compose up'
 
 alias sdu='sudo du --max-depth=3 -hx '
@@ -73,10 +64,6 @@ alias gitl='git log -1 HEAD'
 alias gits='git status'
 alias gl='git log --pretty=format:"%h - %an - %ar - %s" -20'
 alias glsign='git log --pretty=format:"%h - %an - %ar - %s" -20 --show-signature'
-alias gpgfing='gpg --fingerprint'
-alias gpglist='gpg --list-keys'
-alias gpgrefresh='gpg --refresh-keys --keyserver hkp://pool.sks-keyservers.net'
-alias gpgupload='gpg --send-keys --keyserver hkps://pool.sks-keyservers.net'
 alias gpush='git commit -S && git push origin master'
 alias grebc='git rebase --continue'
 alias grebi='git rebase -i master'
@@ -89,13 +76,17 @@ alias shellsync='cd ~/devops_zshconf && git pull origin master && git commit -a 
 alias shutdown='sudo shutdown -P now'
 alias so='unalias -m '\''*'\'' && source ~/.zshrc'
 
-# tmux
-alias tms='tmux list-sessions'
-alias tmuxconfig='nvim ~/dotfiles/tmux/tmux.conf'
-
 # linux
-alias top=htop
 alias untar='tar -xvf'
+alias howbig='du -hc | tail -n 1'
+alias ls='ls -alihF'
+alias la='ls -alhF'
+alias less='less -M'
+alias mkdir='mkdir -p -v'
+alias mv='mv -iv'
+alias purewheel='sudo python setup.py bdist_wheel'
+alias agf='ag -g'
+alias ft='grep -rnw . -e'
 
 # vagrant
 alias vdestroy='vagrant destroy'
@@ -111,16 +102,3 @@ alias vssh='vagrant ssh'
 alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
-
-# other
-alias howbig='du -hc | tail -n 1'
-alias ls='ls -alihF'
-alias la='ls -alhF'
-alias less='less -M'
-alias mkdir='mkdir -p -v'
-alias mv='mv -iv'
-alias purewheel='sudo python setup.py bdist_wheel'
-
-alias which-command=whence
-alias def=sdcv
-alias agf='ag -g'
