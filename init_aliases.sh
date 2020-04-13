@@ -3,7 +3,10 @@ alias ali='vim ~/devops_zshconf/init_aliases.sh'
 
 # custom servers
 alias asgard='ssh sp@asgard'
-alias helheim='ssh stefan@helheim'
+alias helheim='ssh sp@helheim'
+alias jotunheim='ssh sp@jotunheim'
+alias vanaheim='ssh sp@vanaheim'
+alias muspelheim='ssh sp@muspelheim'
 
 # maconly
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'

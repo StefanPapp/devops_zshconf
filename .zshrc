@@ -28,7 +28,7 @@ setopt share_history # share history between different instances of the shell
 
 # plugins 
 # removed per-directory-history
-plugins=(git osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
+plugins=(git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
 [ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
