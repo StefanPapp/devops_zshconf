@@ -1,13 +1,6 @@
 # todo get all aliases here
 alias ali='vim ~/devops_zshconf/init_aliases.sh'
 
-# custom servers
-alias asgard='ssh sp@asgard'
-alias helheim='ssh sp@helheim'
-alias jotunheim='ssh sp@jotunheim'
-alias vanaheim='ssh sp@vanaheim'
-alias muspelheim='ssh sp@muspelheim'
-
 # maconly
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
@@ -44,13 +37,8 @@ clone_from_github(){
 git clone http://github.com/StefanPapp/$1
 }
 alias gsp='clone_from_github'
-alias gad='git add'
-alias gamend='git commit -S --amend'
-alias gapush='git commit -S -a && git push origin master'
-alias gash='git stash'
 alias gbranch='git checkout master && git pull && git checkout -b'
 alias gca='git add . && git commit -S'
-alias gch='git checkout'
 alias gdc='git diff --cached'
 alias gdfhist='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
 alias gdfmaster='git fetch origin && git diff --name-only origin/master'
@@ -61,7 +49,6 @@ alias get_pulls='git config --add remote.origin.fetch "+refs/pull/*/head:refs/re
 alias gfo='git fetch origin'
 alias gitb='git branch'
 alias gitc='git commit -S'
-alias gitd='git branch -D'
 alias gitgraph='git log --pretty=oneline --graph'
 alias gitl='git log -1 HEAD'
 alias gits='git status'
@@ -70,14 +57,14 @@ alias glsign='git log --pretty=format:"%h - %an - %ar - %s" -20 --show-signature
 alias gpush='git commit -S && git push origin master'
 alias grebc='git rebase --continue'
 alias grebi='git rebase -i master'
-alias grepn='grep -n --color=auto'
 alias gsta='git stash apply'
 
+#kubernetes
+alias k='kubectl'
+
 # aws
-alias s3down='aws s3 sync'
 alias shellsync='cd ~/devops_zshconf && git pull origin master && git commit -a -S && git push origin master'
 alias shutdown='sudo shutdown -P now'
-alias so='unalias -m '\''*'\'' && source ~/.zshrc'
 
 # linux
 alias untar='tar -xvf'
