@@ -26,8 +26,16 @@ alias sdu='sudo du --max-depth=3 -hx '
 alias zshconfig="vim ~/.zshrc"
 alias qn="geeknote create --title 'quick entry' --content ("")"
 
+#kubernetes
+alias k='kubectl'
+alias kgpo='kubectl get po'
+alias kdpo='kubectl describe po'
+
 # alias fd='fdfind'
 alias fullpath='ls -d -1 $PWD/*.*'
+
+#speedtest
+alias st='speedtest'
 
 #git
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
@@ -59,11 +67,8 @@ alias grebc='git rebase --continue'
 alias grebi='git rebase -i master'
 alias gsta='git stash apply'
 
-#kubernetes
-alias k='kubectl'
-
 # aws
-alias shellsync='cd ~/devops_zshconf && git pull origin master && git commit -a -S && git push origin master'
+alias shellsync='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
 alias shutdown='sudo shutdown -P now'
 
 # linux

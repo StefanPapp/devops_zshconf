@@ -16,8 +16,8 @@ export PATH="${HOME}/.scalaenv/bin:${PATH}"
 eval "$(scalaenv init -)"
 
 # Python
-export PATH="${HOME}/.pyenv/bin:${PATH}"
-eval "$(pyenv init -)"
+# export PATH="${HOME}/.pyenv/bin:${PATH}"
+# eval "$(pyenv init -)"
 
 # local zookeeper
 export ZOOKEEPER_HOME="/opt/zookeeper/current"
