@@ -33,16 +33,17 @@ setopt share_history # share history between different instances of the shell
 
 # plugins
 # removed per-directory-history
-plugins=(aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
+plugins=(aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions gradle-completion)
 autoload -U compinit && compinit # init zsh-completion
+
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
 
 [ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
 [ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug b4b4r07/enhancd, use:init.sh
 zplug zsh-users/zsh-history-substring-search
-
-
 zplug load
 
 # specific configuration
@@ -56,15 +57,14 @@ eval $(thefuck --alias)
 
 bindkey -s "\C-h" "\eqhh"
 bindkey -v
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-setopt dotglob           # includes dotfiles in pathname expansion
-setopt auto_cd # cd by typing directory name if it's not a command
+setopt dotglob     # includes dotfiles in pathname expansion
+setopt auto_cd     # cd by typing directory name if it's not a command
 setopt correct_all # autocorrect commands
-setopt auto_list # automatically list choices on ambiguous completion
-setopt auto_menu # automatically use menu completion
+setopt auto_list   # automatically list choices on ambiguous completion
+setopt auto_menu   # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
 # pet:
@@ -86,4 +86,39 @@ bindkey '^s' pet-select
 
 source $ZSH/oh-my-zsh.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source ~/.iterm2_shell_integration.zsh
+
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/stefanpapp/.sdkman"
+[[ -s "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/mpv-iina/bin:$PATH"
+export JAVA_home="/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# HSTR configuration - add this to ~/.zshrc
+alias hh=hstr                    # hh to be alias for hstr
+setopt histignorespace           # skip cmds w/ leading space from history
+export HSTR_CONFIG=hicolor       # get more colors
+bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+
+# capture the output of a command so it can be retrieved with ret
+cap () { tee /tmp/capture.out}
+
+# return the output of the most recent command that was captured by cap
+ret () { cat /tmp/capture.out }
+
+# usage
+# $ find . -name 'filename' | cap
+# $ret

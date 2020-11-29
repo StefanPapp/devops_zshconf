@@ -1,43 +1,30 @@
-# todo get all aliases here
-alias ali='vim ~/devops_zshconf/init_aliases.sh'
-
-# maconly
+# package management (mac/linux)
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
-# linux distro only
-alias syum='sudo yum'
-alias sctl='systemctl'
-alias au='sudo apt update'
-alias aug='sudo apt upgrade'
-alias ai='sudo apt install'
+# alias lu='sudo yum upgrade'
+alias lupd='sudo apt update $$ sudo apt upgrade'
+alias ladd='sudo apt install'
 
 #tmux
-alias attach='tmux attach -t'
-alias tms='tmux list-sessions'
-alias tmuxconfig='nvim ~/tmux.conf'
+alias tadd='tmux attach -t'
+alias tlst='tmux list-sessions'
+alias tcfg='vim ~/tmux.conf'
 
 # docker
 alias dbuild='docker-compose build'
-alias dhalt='docker-compose stop'
-alias dps='docker-compose ps'
-alias dup='docker-compose up'
+alias dchalt='docker-compose stop'
+alias dlst='docker ps -A'
+alias dcup='docker-compose up'
 
-alias sdu='sudo du --max-depth=3 -hx '
-alias zshconfig="vim ~/.zshrc"
-alias qn="geeknote create --title 'quick entry' --content ("")"
-
-#kubernetes
+# kubernetes
 alias k='kubectl'
-alias kgpo='kubectl get po'
+alias kpo='kubectl get po'
 alias kdpo='kubectl describe po'
 
-# alias fd='fdfind'
-alias fullpath='ls -d -1 $PWD/*.*'
-
-#speedtest
+# speedtest
 alias st='speedtest'
 
-#git
+# git
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gpom='git push origin master'
 
@@ -46,6 +33,7 @@ git clone http://github.com/StefanPapp/$1
 }
 alias gsp='clone_from_github'
 alias gbranch='git checkout master && git pull && git checkout -b'
+# alias fd='fdfind'
 alias gca='git add . && git commit -S'
 alias gdc='git diff --cached'
 alias gdfhist='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
@@ -67,11 +55,9 @@ alias grebc='git rebase --continue'
 alias grebi='git rebase -i master'
 alias gsta='git stash apply'
 
-# aws
-alias shellsync='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
-alias shutdown='sudo shutdown -P now'
-
-# linux
+# core
+alias sdu='sudo du --max-depth=3 -hx '
+alias sctl='systemctl'
 alias untar='tar -xvf'
 alias howbig='du -hc | tail -n 1'
 alias ls='ls -alihF'
@@ -80,8 +66,9 @@ alias less='less -M'
 alias mkdir='mkdir -p -v'
 alias mv='mv -iv'
 alias purewheel='sudo python setup.py bdist_wheel'
-alias agf='ag -g'
 alias ft='grep -rnw . -e'
+alias agf='ag -g'
+alias fullpath='ls -d -1 $PWD/*.*'
 
 # vagrant
 alias vdestroy='vagrant destroy'
@@ -97,3 +84,9 @@ alias vssh='vagrant ssh'
 alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
+
+# zsh
+alias zupd='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
+alias zcfga='vim ~/.zsh/init_aliases.sh'
+alias zcfg="vim ~/.zshrc"
+
