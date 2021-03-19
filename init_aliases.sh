@@ -1,5 +1,5 @@
 # package management (mac/linux)
-alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
+alias brewski='brew update && brew upgrade && brew upgrade $(brew list --cask) && brew cleanup; brew doctor'
 
 # alias lu='sudo yum upgrade'
 alias lupd='sudo apt update $$ sudo apt upgrade'
@@ -85,6 +85,8 @@ alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
 
+# vim
+alias vcfg='vim ~/.vim/vimrc'
 # zsh
 alias zupd='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
 alias zcfga='vim ~/.zsh/init_aliases.sh'

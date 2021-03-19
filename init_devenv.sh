@@ -1,23 +1,23 @@
 # developer stuff
 # vi
 alias vim=nvim
- # Python
+
+# Python
+# eval "$(pyenv init -)"
 export PYTHON_BIN=python3
 export PYSPARK_PYTHON=python3
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+# export PATH="${HOME}/.pyenv/bin:${PATH}"
 
 # Java
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
-
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home'
 # Scala
 export PATH="${HOME}/.scalaenv/bin:${PATH}"
 eval "$(scalaenv init -)"
 
-# Python
-# export PATH="${HOME}/.pyenv/bin:${PATH}"
-# eval "$(pyenv init -)"
 
 # local zookeeper
 export ZOOKEEPER_HOME="/opt/zookeeper/current"

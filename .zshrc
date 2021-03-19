@@ -80,7 +80,7 @@ function pet-select() {
 
 }
 zle -N pet-select
-stty -ixon
+# stty -ixon
 bindkey '^s' pet-select
 
 
