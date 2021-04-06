@@ -33,7 +33,7 @@ setopt share_history # share history between different instances of the shell
 
 # plugins
 # removed per-directory-history
-plugins=(aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions gradle-completion)
+plugins=(zsh-vi-mode aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
