@@ -1,4 +1,5 @@
 # developer stuff
+
 # vi
 alias vim=nvim
 
@@ -20,24 +21,21 @@ eval "$(scalaenv init -)"
 
 
 # local zookeeper
-export ZOOKEEPER_HOME="/opt/zookeeper/current"
+export ZOOKEEPER_HOME="/opt/zookeeper"
 export PATH=$ZOOKEEPER_HOME/bin:$PATH
 
 #local spark
-export SPARK_HOME="/opt/spark/current"
+export SPARK_HOME="/opt/spark/"
 export PATH=$SPARK_HOME/bin:$PATH
 
 # local kafka
 export PATH=$KAFKA_HOME/binexport PATH=$ZOOKEEPER_HOME/bin:$PATH
-export KAFKA_HOME="/opt/kafka/current"
+export KAFKA_HOME="/opt/kafka/"
+
 alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
-
-# devops
-export PATH=/opt/puppetlabs/bin:$PATH
-
 
 alias sparoo='cd $SPARK_HOME'
 alias kafroo='cd $KAFKA_HOME'
 
-# dev
-alias pat='puppet agent -t --verbose'
+# old
+#alias pat='puppet agent -t --verbose'

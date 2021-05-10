@@ -50,7 +50,6 @@ zplug load
 source "${ZSHCONFDIR}/init_aliases.sh" # aliases
 source "${ZSHCONFDIR}/init_devenv.sh" # dev env such as java and scala
 source "${ZSHCONFDIR}/init_macosenv.sh" # mac os specific
-source "${ZSHCONFDIR}/init_cloudenv.sh" # cloud environment
 source "${HOME}/.scm_breeze/scm_breeze.sh"
 
 eval $(thefuck --alias)
@@ -122,3 +121,5 @@ ret () { cat /tmp/capture.out }
 # usage
 # $ find . -name 'filename' | cap
 # $ret
+
+source /Users/stefanpapp/.config/broot/launcher/bash/br

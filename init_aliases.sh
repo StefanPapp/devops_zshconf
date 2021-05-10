@@ -1,28 +1,31 @@
 # package management (mac/linux)
-alias brewski='brew update && brew upgrade && brew upgrade $(brew list --cask) && brew cleanup; brew doctor'
+alias bu='brew update && brew upgrade && brew upgrade $(brew list --cask) && brew cleanup; brew doctor'
+alias brewski='bu'
+alias zu='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
+alias lu='sudo apt update $$ sudo apt upgrade'
 
-# alias lu='sudo yum upgrade'
-alias lupd='sudo apt update $$ sudo apt upgrade'
-alias ladd='sudo apt install'
-
-#tmux
-alias tadd='tmux attach -t'
-alias tlst='tmux list-sessions'
+# config
 alias tcfg='vim ~/tmux.conf'
+alias zcfg="vim ~/.zshrc"
+alias acfg='vim ~/.zsh/init_aliases.sh $$ source ~/.zsh/init_aliases.sh'
+alias vcfg="vim ~/.vimrc"
+
+# one chars
+alias t='dtrx'
+alias k='kubectl'
+alias e='exa -al'
+alias s='speedtest'
 
 # docker
-alias dbuild='docker-compose build'
-alias dchalt='docker-compose stop'
-alias dlst='docker ps -A'
-alias dcup='docker-compose up'
+alias dcb='docker compose build'
+alias dcs='docker compose stop'
+alias dls='docker ps -A'
+alias dcu='docker compose up'
 
 # kubernetes
-alias k='kubectl'
-alias kpo='kubectl get po'
-alias kdpo='kubectl describe po'
+alias kgp='kubectl get po'
+alias kdp='kubectl describe po'
 
-# speedtest
-alias st='speedtest'
 
 # git
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
@@ -58,11 +61,7 @@ alias gsta='git stash apply'
 # core
 alias sdu='sudo du --max-depth=3 -hx '
 alias sctl='systemctl'
-alias untar='tar -xvf'
 alias howbig='du -hc | tail -n 1'
-alias ls='exa'
-#alias ls='ls -alihF'
-alias la='ls -alhF'
 alias less='less -M'
 alias mkdir='mkdir -p -v'
 alias mv='mv -iv'
@@ -85,11 +84,4 @@ alias vssh='vagrant ssh'
 alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
-
-# vim
-alias vcfg='vim ~/.vim/vimrc'
-# zsh
-alias zupd='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
-alias zcfga='vim ~/.zsh/init_aliases.sh'
-alias zcfg="vim ~/.zshrc"
 
