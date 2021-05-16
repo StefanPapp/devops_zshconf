@@ -123,3 +123,13 @@ ret () { cat /tmp/capture.out }
 # $ret
 
 source /Users/stefanpapp/.config/broot/launcher/bash/br
+
+export OH_MY_NEOVIM=/Users/stefanpapp/.oh-my-neovim
+
+export OH_MY_NEOVIM_EXTENSIONS="default clang code_style git go gpg idea java jira json mouse neomake register snippet spell sublime themes tmux true_color yaml"
+
+source /Users/stefanpapp/.oh-my-neovim/tools/functions.sh
+
+PATH="/Users/stefanpapp/.gem/ruby/2.6.0/bin:$PATH"
+
+PATH="/Users/stefanpapp/.node_modules_global/bin:$PATH"

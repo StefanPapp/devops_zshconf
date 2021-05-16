@@ -1,7 +1,7 @@
 # package management (mac/linux)
 alias bu='brew update && brew upgrade && brew upgrade $(brew list --cask) && brew cleanup; brew doctor'
 alias brewski='bu'
-alias zu='cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
+alias zu='cd ~/.oh-my-zsh && git pull && cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
 alias lu='sudo apt update $$ sudo apt upgrade'
 
 # config
@@ -15,6 +15,7 @@ alias t='dtrx'
 alias k='kubectl'
 alias e='exa -al'
 alias s='speedtest'
+alias v='vim'
 
 # docker
 alias dcb='docker compose build'
@@ -26,7 +27,6 @@ alias dcu='docker compose up'
 alias kgp='kubectl get po'
 alias kdp='kubectl describe po'
 
-
 # git
 alias format='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gpom='git push origin master'
@@ -36,7 +36,6 @@ git clone http://github.com/StefanPapp/$1
 }
 alias gsp='clone_from_github'
 alias gbranch='git checkout master && git pull && git checkout -b'
-# alias fd='fdfind'
 alias gca='git add . && git commit -S'
 alias gdc='git diff --cached'
 alias gdfhist='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
