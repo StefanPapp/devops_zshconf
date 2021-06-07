@@ -10,8 +10,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
 
-git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-  ~ZSH_CUSTOM/plugins/fast-syntax-highlighting
+git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
 
 git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 ~/.scm_breeze/install.sh
