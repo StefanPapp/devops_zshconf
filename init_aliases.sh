@@ -1,5 +1,8 @@
 # package management (mac/linux)
-alias bu='brew update && brew upgrade && brew upgrade $(brew list --cask) && brew cleanup; brew doctor'
+alias bu='brew update && brew upgrade || brew upgrade $(brew list --cask) || brew cleanup; brew doctor'
+alias bu2='brew update; brew upgrade; brew cu -ay; brew cleanup;'
+
+alias pu='pip3 install --upgrade `pip3 list --outdated | awk 'NR>2 {print $1}'`'
 alias brewski='bu'
 alias zu='cd ~/.oh-my-zsh && git pull && cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
 alias lu='sudo apt update $$ sudo apt upgrade'
