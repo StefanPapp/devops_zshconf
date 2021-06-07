@@ -2,7 +2,7 @@
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-rm ~/.zshrc./
+rm ~/.zshrc
 ln -s ~/devops_zshconf/.zshrc ~/.zshrc
 
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
