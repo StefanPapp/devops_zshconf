@@ -14,6 +14,8 @@ alias acfg='vim ~/.zsh/init_aliases.sh $$ source ~/.zsh/init_aliases.sh'
 alias vcfg="vim ~/.vimrc"
 
 # one chars
+alias b='bat'
+alias cat='bat'
 alias t='dtrx'
 alias k='kubectl'
 alias e='exa -al'
