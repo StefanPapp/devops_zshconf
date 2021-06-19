@@ -19,23 +19,12 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/
 export PATH="${HOME}/.scalaenv/bin:${PATH}"
 eval "$(scalaenv init -)"
 
-
-# local zookeeper
-export ZOOKEEPER_HOME="/opt/zookeeper"
-export PATH=$ZOOKEEPER_HOME/bin:$PATH
-
 #local spark
 export SPARK_HOME="/opt/spark/"
 export PATH=$SPARK_HOME/bin:$PATH
 
 # local kafka
-export PATH=$KAFKA_HOME/binexport PATH=$ZOOKEEPER_HOME/bin:$PATH
 export KAFKA_HOME="/opt/kafka/"
 
 alias ktl='kafka-topics.sh --list --zookeeper localhost:2181'
 
-alias sparoo='cd $SPARK_HOME'
-alias kafroo='cd $KAFKA_HOME'
-
-# old
-#alias pat='puppet agent -t --verbose'

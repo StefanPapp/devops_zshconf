@@ -30,10 +30,9 @@ setopt hist_reduce_blanks # remove superfluous blanks from history items
 setopt inc_append_history # save history entries as soon as they are entered
 setopt share_history # share history between different instances of the shell
 
-
 # plugins
 # removed per-directory-history
-plugins=(zsh-vi-mode aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
+plugins=(kube-aliases zsh-vi-mode aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
@@ -98,7 +97,6 @@ source ~/.iterm2_shell_integration.zsh
 export SDKMAN_DIR="/Users/stefanpapp/.sdkman"
 [[ -s "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/opt/mpv-iina/bin:$PATH"
-export JAVA_home="/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # tabtab source for packages
@@ -122,14 +120,10 @@ ret () { cat /tmp/capture.out }
 # $ find . -name 'filename' | cap
 # $ret
 
-source /Users/stefanpapp/.config/broot/launcher/bash/br
-
 export OH_MY_NEOVIM=/Users/stefanpapp/.oh-my-neovim
-
 export OH_MY_NEOVIM_EXTENSIONS="default clang code_style git go gpg idea java jira json mouse neomake register snippet spell sublime themes tmux true_color yaml"
 
 source /Users/stefanpapp/.oh-my-neovim/tools/functions.sh
 
 PATH="/Users/stefanpapp/.gem/ruby/2.6.0/bin:$PATH"
-
 PATH="/Users/stefanpapp/.node_modules_global/bin:$PATH"
