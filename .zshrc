@@ -32,7 +32,7 @@ setopt share_history # share history between different instances of the shell
 
 # plugins
 # removed per-directory-history
-plugins=(kube-aliases zsh-vi-mode aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
+plugins=(kube-aliases zsh-vi-mode aws fzf git python pip tmux macos z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
@@ -65,22 +65,6 @@ setopt auto_list   # automatically list choices on ambiguous completion
 setopt auto_menu   # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
-# pet:
-function prev() {
-      PREV=$(fc -lrn | head -n 1)
-        sh -c "pet new `printf %q "$PREV"`"
-
-}
-function pet-select() {
-  BUFFER=$(pet search --query "$LBUFFER")
-    CURSOR=$#BUFFER
-      zle redisplay
-
-}
-zle -N pet-select
-# stty -ixon
-bindkey '^s' pet-select
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,7 +80,6 @@ source ~/.iterm2_shell_integration.zsh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/stefanpapp/.sdkman"
 [[ -s "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh"
-export PATH="/usr/local/opt/mpv-iina/bin:$PATH"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # tabtab source for packages
@@ -127,3 +110,5 @@ source /Users/stefanpapp/.oh-my-neovim/tools/functions.sh
 
 PATH="/Users/stefanpapp/.gem/ruby/2.6.0/bin:$PATH"
 PATH="/Users/stefanpapp/.node_modules_global/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+

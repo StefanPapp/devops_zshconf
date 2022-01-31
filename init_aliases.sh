@@ -1,10 +1,11 @@
 # package management (mac/linux)
 # alias bu='brew update && brew upgrade || brew upgrade $(brew list --cask) || brew cleanup; brew doctor'
-alias bu='brew update; brew upgrade; brew cu -ay; brew cleanup; brew doctor'
+alias bu='brew update; brew upgrade; brew cu -ay; brew cleanup; brew doctor; omz update'
 
-alias pu='pip3 install --upgrade `pip3 list --outdated | awk 'NR>2 {print $1}'`'
+alias pu='pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U'
+#alias pu='pip3 install --upgrade `pip3 list --outdated | awk 'NR>2 {print $1}'`'
 # alias brewski='bu'
-alias zu='cd ~/.oh-my-zsh && git pull && cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
+alias zu='cd ~/.oh-my-zsh && git pull && cd ~.z && git pull && cd ~/.zsh && git pull origin master && git commit -a -S && git push origin master'
 alias lu='sudo apt update $$ sudo apt upgrade'
 
 # config
