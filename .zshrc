@@ -32,15 +32,17 @@ setopt share_history # share history between different instances of the shell
 
 # plugins
 # removed per-directory-history
-plugins=(kube-aliases zsh-vi-mode aws fzf git python pip tmux osx z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
+plugins=(zsh-vi-mode aws fzf git python pip tmux macos z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
-
-[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
-[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
+
+#[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
+#[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
 zplug b4b4r07/enhancd, use:init.sh
 zplug zsh-users/zsh-history-substring-search
 zplug load
