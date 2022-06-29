@@ -1,8 +1,5 @@
 # developer stuff
 
-# vi
-alias vim=nvim
-
 # Python
 # eval "$(pyenv init -)"
 export PYTHON_BIN=python3
@@ -14,7 +11,7 @@ export PATH=/usr/local/sbin:$PATH
 # Java
 export PATH="${HOME}/.jenv/bin:${PATH}"
 eval "$(jenv init -)"
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home'
 # Scala
 #export PATH="${HOME}/.scalaenv/bin:${PATH}"
 #eval "$(scalaenv init -)"

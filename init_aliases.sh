@@ -21,7 +21,12 @@ alias t='dtrx'
 alias k='kubectl'
 alias e='exa -al'
 alias s='speedtest'
-alias v='vim'
+alias v='vi'
+alias vim='vi'
+
+# Python
+alias python=python3
+alias pip=pip3
 
 # docker
 alias dcb='docker compose build'

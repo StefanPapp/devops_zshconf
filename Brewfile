@@ -13,20 +13,10 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "iina/mpv-iina"
-tap "jenkins-x/jx"
 tap "jhawthorn/fzy"
-tap "knative/client"
 tap "knqyf263/pet"
-tap "materializeinc/materialize"
 tap "mongodb/brew"
 tap "weaveworks/tap"
-
-
-
-
-
-
-
 
 brew "antigen"
 brew "aws-iam-authenticator"
@@ -92,7 +82,7 @@ cask "1password"
 cask "bartender"
 cask "brave-browser"
 cask "beyond-compare"
-cask "double-commander"
+cask "commander-one"
 cask "elmedia-player"
 cask "fantastical"
 cask "firefox"
@@ -109,6 +99,7 @@ cask "microsoft-teams"
 cask "nordvpn"
 cask "notion"
 cask "oracle-jdk"
+cask "pdf-expert
 cask "powershell"
 cask "pycharm-ce"
 cask "qbittorrent"
