@@ -16,11 +16,10 @@ alias vcfg="vim ~/.vimrc"
 
 # one chars
 alias b='bat'
-alias cat='bat'
 alias t='dtrx'
 alias k='kubectl'
 alias e='exa -al'
-alias s='speedtest'
+alias s='source .venv/bin/activate'
 alias v='vi'
 alias vim='vi'
 
