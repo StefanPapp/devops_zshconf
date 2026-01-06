@@ -1,11 +1,14 @@
  #!/bin/sh
 
 # zsh
+
+export ZSH_CUSTOM=~/.oh-my-zsh/custom
 git clone https://github.com/rupa/z ~
+git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 cd
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-export ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
@@ -14,7 +17,6 @@ git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-c
 git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
 git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 ~/.scm_breeze/install.sh
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 # tmux
 git clone https://github.com/gpakosz/.tmux.git
