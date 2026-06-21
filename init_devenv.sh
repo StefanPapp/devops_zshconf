@@ -14,8 +14,8 @@ export PATH=/usr/local/sbin:$PATH
 # eval "$(jenv init -)"
 # export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home'
 # Scala
-#export PATH="${HOME}/.scalaenv/bin:${PATH}"
-#eval "$(scalaenv init -)"
+# export PATH="${HOME}/.scalaenv/bin:${PATH}"
+# eval "$(scalaenv init -)"
 
 #local spark
 #export SPARK_HOME="/opt/spark/"
