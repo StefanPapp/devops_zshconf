@@ -32,14 +32,12 @@ setopt share_history # share history between different instances of the shell
 
 # plugins
 plugins=(zsh-vi-mode git python tmux macos z docker sudo fast-syntax-highlighting zsh-completions)
-
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
-<<<<<<< HEAD
 
 #[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
 #[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
