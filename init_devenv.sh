@@ -2,9 +2,9 @@
 
 # Python
 # eval "$(pyenv init -)"
-export PYTHON_BIN=python3
-export PIP_BIN=pip3
-export PYSPARK_PYTHON=python3
+#export PYTHON_BIN=python3
+#export PIP_BIN=pip3
+#export PYSPARK_PYTHON=python3
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 # export PATH="${HOME}/.pyenv/bin:${PATH}"

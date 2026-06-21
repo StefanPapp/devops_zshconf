@@ -31,12 +31,8 @@ setopt inc_append_history # save history entries as soon as they are entered
 setopt share_history # share history between different instances of the shell
 
 # plugins
-# removed per-directory-history
-<<<<<<< HEAD
-plugins=(zsh-vi-mode aws fzf git python pip tmux macos z vagrant docker sudo vi-mode fast-syntax-highlighting zsh-completions)
-=======
-plugins=(zsh-vi-mode git python pip tmux macos z docker sudo fast-syntax-highlighting zsh-completions)
->>>>>>> 9c11b3cc9d155788c434e808e89f588227b30a34
+plugins=(zsh-vi-mode git python tmux macos z docker sudo fast-syntax-highlighting zsh-completions)
+
 autoload -U compinit && compinit # init zsh-completion
 
 autoload bashcompinit && bashcompinit
@@ -49,9 +45,6 @@ source $ZPLUG_HOME/init.zsh
 #[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
 # source $ZPLUG_HOME/init.zsh
 zplug b4b4r07/enhancd, use:init.sh
-=======
-# zplug b4b4r07/enhancd, use:init.sh
->>>>>>> 9c11b3cc9d155788c434e808e89f588227b30a34
 zplug zsh-users/zsh-history-substring-search
 zplug load
 
@@ -124,8 +117,6 @@ if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/s
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/completion.zsh.inc'; fi
 
-. "$HOME/.langflow/uv/env"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
@@ -169,7 +160,13 @@ extract() {
     *)         echo "Unknown format" ;;
   esac
 }
-
+eval "$(direnv hook zsh)"
 # Created by `pipx` on 2025-12-13 10:31:58
 export PATH="$PATH:/Users/stefanpapp/.local/bin"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export ENABLE_LSP_TOOL=1
+
+# OpenFang
+export PATH=/Users/stefanpapp/.openfang/bin:$PATH
+
+export PATH="/Users/stefanpapp/.local/bin:$PATH"
