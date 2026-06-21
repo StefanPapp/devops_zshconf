@@ -93,4 +93,4 @@ alias vssh='vagrant ssh'
 alias vstatus='vagrant global-status'
 alias vsuspend='vagrant suspend'
 alias vup='vagrant up'
-
+alias prq='gh pr create --fill && gh pr merge --squash --delete-branch --auto'
