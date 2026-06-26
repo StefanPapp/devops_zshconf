@@ -31,41 +31,33 @@ setopt inc_append_history # save history entries as soon as they are entered
 setopt share_history # share history between different instances of the shell
 
 # plugins
-plugins=(zsh-vi-mode git python tmux macos z docker sudo fast-syntax-highlighting zsh-completions)
-autoload -U compinit && compinit # init zsh-completion
+plugins=(zsh-vi-mode git python tmux macos z docker sudo fast-syntax-highlighting zsh-completions history-substring-search)
 
-autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
+[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
+[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-#[ -s "/usr/share/zplug" ] && export ZPLUG_HOME=/usr/share/zplug
-#[ -s "/usr/local/opt/zplug" ] && export ZPLUG_HOME=/usr/local/opt/zplug
-# source $ZPLUG_HOME/init.zsh
 zplug b4b4r07/enhancd, use:init.sh
-zplug zsh-users/zsh-history-substring-search
 zplug load
 
 # specific configuration
 source "${ZSHCONFDIR}/init_aliases.sh" # aliases
 source "${ZSHCONFDIR}/init_devenv.sh" # dev env such as java and scala
 source "${ZSHCONFDIR}/init_macosenv.sh" # mac os specific
-source "${HOME}/.scm_breeze/scm_breeze.sh"
 
 bindkey -s "\C-h" "\eqhh"
-bindkey -v
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 setopt dotglob     # includes dotfiles in pathname expansion
 setopt auto_cd     # cd by typing directory name if it's not a command
-setopt correct_all # autocorrect commands
 setopt auto_list   # automatically list choices on ambiguous completion
 setopt auto_menu   # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
 
 source $ZSH/oh-my-zsh.sh
+autoload bashcompinit && bashcompinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -76,11 +68,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export SDKMAN_DIR="/Users/stefanpapp/.sdkman"
 [[ -s "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/stefanpapp/.sdkman/bin/sdkman-init.sh"
 
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/anaconda3/bin:$PATH"
 # HSTR configuration - add this to ~/.zshrc
 alias hh=hstr                    # hh to be alias for hstr
 setopt histignorespace           # skip cmds w/ leading space from history
@@ -99,15 +86,6 @@ ret () { cat /tmp/capture.out }
 
 export OH_MY_NEOVIM=/Users/stefanpapp/.oh-my-neovim
 export OH_MY_NEOVIM_EXTENSIONS="default clang code_style git go gpg idea java jira json mouse neomake register snippet spell sublime themes tmux true_color yaml"
-
-PATH="/Users/stefanpapp/.gem/ruby/2.6.0/bin:$PATH"
-PATH="/Users/stefanpapp/.node_modules_global/bin:$PATH"
-export VAULT_ADDR='http://127.0.0.1:8200'
-
-export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
-
-# Added by Windsurf
-export PATH="/Users/stefanpapp/.codeium/windsurf/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
@@ -159,12 +137,11 @@ extract() {
   esac
 }
 eval "$(direnv hook zsh)"
-# Created by `pipx` on 2025-12-13 10:31:58
-export PATH="$PATH:/Users/stefanpapp/.local/bin"
+PATH="/Users/stefanpapp/.gem/ruby/2.6.0/bin:$PATH"
+PATH="/Users/stefanpapp/.node_modules_global/bin:$PATH"
+#export VAULT_ADDR='http://127.0.0.1:8200'
+
+export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export ENABLE_LSP_TOOL=1
-
-# OpenFang
-export PATH=/Users/stefanpapp/.openfang/bin:$PATH
-
 export PATH="/Users/stefanpapp/.local/bin:$PATH"
